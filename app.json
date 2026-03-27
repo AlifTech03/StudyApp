@@ -37,7 +37,18 @@
             "imageWidth": 76
           }
         }
-      ]
+      ],
+      "expo-web-browser",
+      [
+        "@sentry/react-native/expo",
+        {
+          "url": "https://sentry.io/",
+          "project": "study-app",
+          "organization": "alif-hasan-org"
+        }
+      ],
+      "@sentry/react-native",
+      "expo-secure-store"
     ],
     "experiments": {
       "typedRoutes": true,

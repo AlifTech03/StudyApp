@@ -1,15 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
+import ProfileMain from "@/components/ui/profile/profilemain";
 
 const Profile = () => {
-  return (
-    <SafeAreaView>
-      <Text>Profile</Text>
-    </SafeAreaView>
-  )
-}
+  return <ProfileMain />;
+};
 
-export default Profile
+export default Profile;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
