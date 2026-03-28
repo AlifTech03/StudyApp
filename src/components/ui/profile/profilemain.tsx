@@ -122,7 +122,9 @@ const ProfileMain = () => {
                     color={item.color}
                   />
                 </View>
-                <Text className="text-gray-200 text-base">{item.label}</Text>
+                <Text className="text-gray-200 font-semibold text-base">
+                  {item.label}
+                </Text>
               </View>
               <Entypo name="chevron-right" size={24} color={COLORS.textMuted} />
             </Pressable>
