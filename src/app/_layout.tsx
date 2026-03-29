@@ -1,3 +1,5 @@
+import ChatWrapper from "@/components/ChatWrapper";
+import AppProvider from "@/contexts/AppProvider";
 import { ClerkProvider, useAuth } from "@clerk/expo";
 import { tokenCache } from "@clerk/expo/token-cache";
 import * as Sentry from "@sentry/react-native";
@@ -50,14 +52,18 @@ const RootLayoutNav = () => {
   }
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <Stack>
-        <Stack.Protected guard={!isSignedIn}>
-          <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-        </Stack.Protected>
-        <Stack.Protected guard={isSignedIn}>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        </Stack.Protected>
-      </Stack>
+      <ChatWrapper>
+        <AppProvider>
+          <Stack>
+            <Stack.Protected guard={!isSignedIn}>
+              <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+            </Stack.Protected>
+            <Stack.Protected guard={isSignedIn}>
+              <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+            </Stack.Protected>
+          </Stack>
+        </AppProvider>
+      </ChatWrapper>
     </GestureHandlerRootView>
   );
 };

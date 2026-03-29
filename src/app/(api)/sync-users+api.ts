@@ -1,6 +1,6 @@
-import { StreamChat } from "stream-chat";
 import { API_KEY, SECRET_KEY } from "@/config/stream-config";
 import * as Sentry from "@sentry/react-native";
+import { StreamChat } from "stream-chat";
 if (!API_KEY) {
   throw new Error("Add your Stream API Key to the .env file");
 }
@@ -9,7 +9,7 @@ if (!SECRET_KEY) {
   throw new Error("Add your Stream Secret Key to the .env file");
 }
 
-export default async function POST(req: Request) {
+export async function POST(req: Request) {
   const client = StreamChat.getInstance(API_KEY, SECRET_KEY);
   const { userId, image, name } = await req.json();
   if (!userId) {

@@ -9,7 +9,7 @@ if (!SECRET_KEY) {
   throw new Error("Add your Stream Secret Key to the .env file");
 }
 
-export default async function POST(req: Request) {
+export async function POST(req: Request) {
   const client = StreamChat.getInstance(API_KEY, SECRET_KEY);
   const { userId } = await req.json();
   if (!userId) {

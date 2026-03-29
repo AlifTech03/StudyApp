@@ -1,11 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import ExploreMain from '@/components/ui/explore/ExploreMain'
 
 const Explore = () => {
   return (
-    <View>
-      <Text>explore</Text>
-    </View>
+    <ExploreMain />
   )
 }
 
